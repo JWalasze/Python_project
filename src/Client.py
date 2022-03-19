@@ -19,10 +19,13 @@ class Client:
         self._properties.prepare_filtered_statistic(price_range, square_meters_range, year_built, city, property_type)
 
     def buy_property(self, key_id):
-        print(f"Udało ci się kupić nieruchomość o id: {key_id}")
-        print(f"Szczegółowy opis mieszkania: ")
-        self._properties.show_info_about_property(key_id)
-        self._properties.sell_property(key_id)
+        if key_id < self._properties.return_amount_of_properties():
+            print(f"Udało ci się kupić nieruchomość o id: {key_id}")
+            print(f"Szczegółowy opis mieszkania: ")
+            self._properties.show_info_about_property(key_id)
+            self._properties.sell_property(key_id)
+        else:
+            print('Niepoprawne id nieruchomości!')
 
     def menu(self):
         print('\n')

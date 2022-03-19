@@ -78,3 +78,9 @@ class RealEstates:
         for x in self._list_of_properties:
             if x.get_id() == key_id:
                 x.show_basic_info()
+
+    def return_amount_of_properties(self):
+        count = 0
+        for x in self._list_of_properties:
+            count += 1
+        return count
