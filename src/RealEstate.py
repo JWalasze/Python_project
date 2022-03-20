@@ -71,8 +71,12 @@ class RealEstates:
 
     def sell_property(self, key_id):
         for x in self._list_of_properties:
-            if x.get_id() == key_id:
+            if x.get_id() == key_id and x.is_available():
                 x.sell_building()
+                return 0
+
+        print('Nieruchomość jest niedostępna/sprzedana')
+        return -1
 
     def show_info_about_property(self, key_id):
         for x in self._list_of_properties:

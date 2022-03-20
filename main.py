@@ -19,6 +19,7 @@ def main():
     for x in houses:
         estate.add_property(x)
 
+    print('Witamy w systemie przeszukiwania ofert nieruchomości!')
     client = Client(estate)
     client.menu()
 
